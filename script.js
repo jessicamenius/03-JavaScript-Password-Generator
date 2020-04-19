@@ -5,7 +5,7 @@ document.querySelector("button").addEventListener("click", function (event) {
 
   if (length < 8 || length > 128) {
     alert(
-      "The password needs to be at least 8 characters and less than 128 characters"
+      "The password must be greater or equal to 8 characters and less than or equal to 128 characters"
     );
   } else {
     var uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -23,16 +23,15 @@ document.querySelector("button").addEventListener("click", function (event) {
       if (checkboxes[i].value === "lowercase") {
         possibleCharacters += lowercaseCharacters;
       }
-      if (checkboxes[i].value === "special-chars") {
+      if (checkboxes[i].value === "special") {
         possibleCharacters += specialChars;
       }
-      if (checkboxes[i].value === "numb1") {
+      if (checkboxes[i].value === "numb") {
         possibleCharacters += numb1;
       }
     }
 
     var password = "";
-    console.log("password");
 
     for (var j = 0; j < length; j++) {
       password += possibleCharacters.charAt(
